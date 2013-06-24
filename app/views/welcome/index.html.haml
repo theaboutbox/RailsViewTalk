@@ -1,1 +1,4 @@
-%h1 Hi!
+- if user_signed_in?
+  %p Hi, %user.display_name
+- else
+  This thing is awesome, register now!

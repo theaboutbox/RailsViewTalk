@@ -2,10 +2,19 @@
 %html
   %head
     %title RailsViewTalk
+    %meta{charset: 'utf-8'}
     = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true 
     = javascript_include_tag "application", "data-turbolinks-track" => true 
     = csrf_meta_tags 
   %body
+    %header
+      Rails View Demo
     .notice= notice
     .alert= alert
     = yield
+    %footer
+      %ul
+        %li About
+        %li Help
+        %li Buy me some coffee
+

@@ -1,11 +1,18 @@
 class User < ActiveRecord::Base
+  extend FriendlyId
+  friendly_id :display_name, use: :slugged
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   belongs_to :work_address, class_name: 'Address', dependent: :destroy
   belongs_to :home_address, class_name: 'Address', dependent: :destroy
   belongs_to :event
   belongs_to :non_profit
-  
+ 
+  def display_name
+    "#{first_name} #{last_name}"
+  end
+
 end
 
 # == Schema Information
