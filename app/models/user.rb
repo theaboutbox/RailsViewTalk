@@ -8,7 +8,13 @@ class User < ActiveRecord::Base
   belongs_to :home_address, class_name: 'Address', dependent: :destroy
   belongs_to :event
   belongs_to :non_profit
- 
+
+  # [Public] The full, displayable name for a user.
+  #
+  # Example, if the first_name is "Testy" and the last name is "Tester"
+  # then this method returns: "Testy Tester"
+  #
+  # Returns String display name for this user 
   def display_name
     "#{first_name} #{last_name}"
   end

@@ -7,14 +7,27 @@
     = javascript_include_tag "application", "data-turbolinks-track" => true 
     = csrf_meta_tags 
   %body
-    %header
-      Rails View Demo
+    %header#page{role: 'banner'}
+      %nav#utility
+        %p
+          - if user_signed_in?
+            You are logged in as #{current_user.display_name}
+            = link_to "[Your Account]", edit_user_registration_path
+            = link_to "[Sign Out]", destroy_user_session_path, method: :delete
+          - else
+            = link_to "[Sign In]", new_user_session_path
+            = link_to "[Register]", new_user_registration_path
+      %h1 Rails View Demo
     .notice= notice
     .alert= alert
-    = yield
-    %footer
+    .container
+      = yield
+    %footer#page
       %ul
-        %li About
-        %li Help
-        %li Buy me some coffee
+        %li 
+          %a About
+        %li 
+          %a Help
+        %li 
+          %a Buy me some coffee
 

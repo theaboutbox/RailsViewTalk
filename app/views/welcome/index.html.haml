@@ -1,4 +1,13 @@
 - if user_signed_in?
-  %p Hi, %user.display_name
+  %p Hi, #{current_user.display_name}, what would you like to do?
+  %ul
+    %li View your fundraising page
+    %li Change your Event
+    %li Change your Nonprofit
 - else
-  This thing is awesome, register now!
+  %h2 Compete and raise money for a good cause!
+  %p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  %p
+    =link_to  "Register Now!", new_user_registration_path
+    or
+    = link_to "Sign In", new_user_session_path

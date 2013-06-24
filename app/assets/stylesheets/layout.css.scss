@@ -1,0 +1,62 @@
+
+$orange: #ff6600;
+$yellow: #ffde16;
+$lightblue: lightblue;
+
+body {
+  background-color: black;
+  color: white;
+  a {
+    color: $lightblue;
+  }
+}
+
+header#page {
+  height: 68px;
+  margin-bottom: 10px;
+  overflow: hidden;
+  padding: 10px, 20px;
+  background-color: $orange;
+  color: black;
+
+  h1 {
+    padding: 0px;
+    margin: 0px;
+    font-size: 3em;
+    position: absolute;
+    top: 24px;
+  }
+
+  nav#utility {
+    float: right;
+    font-size: 0.8em;
+    margin-right: 1em;
+  }
+}
+
+.container {
+  padding: 0 20px;
+}
+
+footer#page {
+  background-color: $orange;
+  color: black;
+
+  ul {
+    margin-left: -10px;
+    padding: 0
+  }
+
+  li {
+    display: inline;
+    margin: 0;
+
+    a{
+      padding: 5px 10px; 
+      color: black;
+      &:link, &:hover, &:visited, &.active {
+        color: black;
+      }
+    }
+  }
+}
