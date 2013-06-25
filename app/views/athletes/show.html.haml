@@ -1,0 +1,9 @@
+%h1= @athlete.display_name
+%p 
+  Hello and thank you for coming to my fundraising page and supporting
+  me as I compete in the #{@athlete.event.name}, and raise money to
+  support #{@athlete.non_profit.name}
+%p= @athlete.event.description
+%p= @athlete.non_profit.description
+%button.donate Click here to donate!
+
