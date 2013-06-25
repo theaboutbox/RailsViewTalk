@@ -1,7 +1,7 @@
 - if user_signed_in?
   %p Hi, #{current_user.display_name}, what would you like to do?
   %ul
-    %li View your fundraising page
+    %li= link_to "View your fundraising page", athlete_path(current_user)
     %li= link_to "Change your Event", edit_account_event_path
     %li= link_to "Change your Nonprofit", edit_account_non_profit_path
 - else

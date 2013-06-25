@@ -5,6 +5,8 @@ RailsViewTalk::Application.routes.draw do
     resource :non_profit
   end
 
+  get 'athlete/:id' => 'athletes#show', as: :athlete
+  
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
   devise_for :users, :controllers => {:registrations => "users/registrations"}
   # The priority is based upon order of creation: first created -> highest priority.
