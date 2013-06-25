@@ -5,6 +5,14 @@ GIT
     friendly_id (5.0.0.alpha1)
 
 GIT
+  remote: git://github.com/plataformatec/simple_form.git
+  revision: a2286a6d6d9aa9c251a272fbe9dbcf77669ce51f
+  specs:
+    simple_form (3.0.0.rc)
+      actionpack (>= 4.0.0.rc1, < 4.1)
+      activemodel (>= 4.0.0.rc1, < 4.1)
+
+GIT
   remote: git://github.com/sferik/rails_admin.git
   revision: 3ab602d70a3ffb89a400cfb1d8795d89108f5afb
   branch: rails-4
@@ -87,7 +95,9 @@ GEM
     erubis (2.7.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
-    fabrication (2.5.4)
+    fabrication (2.7.2)
+    faker (1.1.2)
+      i18n (~> 0.5)
     ffi (1.9.0)
     font-awesome-rails (3.2.1.1)
       railties (>= 3.2, < 5.0)
@@ -243,6 +253,7 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   devise (>= 3.0.0.rc)
   fabrication
+  faker
   friendly_id!
   guard-rspec (~> 3.0.2)
   haml
@@ -254,6 +265,7 @@ DEPENDENCIES
   rspec-rails
   sass-rails (~> 4.0.0.rc2)
   sdoc
+  simple_form!
   sqlite3
   turbolinks
   turnip

@@ -1,0 +1,5 @@
+%h1 Choose a nonprofit
+= simple_form_for @user, url: account_non_profit_path do |f|
+  = f.association :non_profit, collection: NonProfit.all, label: "Select a Non Profit"
+  = f.button :submit
+

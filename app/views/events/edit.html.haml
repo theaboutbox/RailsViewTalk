@@ -1,0 +1,5 @@
+%h1 Choose a nonprofit
+= simple_form_for @user, url: account_event_path do |f|
+  = f.association :event, collection: Event.all, label: "Select an Event"
+  = f.button :submit
+

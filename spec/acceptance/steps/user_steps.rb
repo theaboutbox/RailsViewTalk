@@ -17,4 +17,12 @@ module UserSteps
     u = User.find_by_email 'test@test.com'
     expect(u).to be_present
   end
+
+  step "I am logged in" do
+    @user = Fabricate(:user)
+    visit new_user_session_path
+    fill_in "user_email", with: @user.email
+    fill_in "user_password", with: "test12345"
+    click_button "Sign in"
+  end
 end

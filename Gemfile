@@ -13,6 +13,7 @@ gem 'devise', '>= 3.0.0.rc'
 gem 'haml'
 gem 'friendly_id', github: 'FriendlyId/friendly_id'
 gem 'rails_admin', github: 'sferik/rails_admin', branch: 'rails-4'
+gem 'simple_form', github: 'plataformatec/simple_form'
 
 group :doc do
   gem 'sdoc', require: false
@@ -33,4 +34,5 @@ end
 group :test do
   gem 'turnip'
   gem 'fabrication'
+  gem 'faker'
 end

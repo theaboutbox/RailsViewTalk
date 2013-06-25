@@ -1,4 +1,10 @@
 RailsViewTalk::Application.routes.draw do
+
+  resource :account do
+    resource :event
+    resource :non_profit
+  end
+
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
   devise_for :users, :controllers => {:registrations => "users/registrations"}
   # The priority is based upon order of creation: first created -> highest priority.
