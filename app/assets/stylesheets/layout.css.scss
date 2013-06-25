@@ -1,13 +1,16 @@
-
-$orange: #ff6600;
-$yellow: #ffde16;
-$lightblue: lightblue;
+$header: slateblue;
+$footer: $header;
+$headerText: white;
+$footerText: $headerText;
+$pagebackground: white;
+$linkText: slateblue;
+$textColor: black;
 
 body {
-  background-color: black;
-  color: white;
+  background-color: $pagebackground;
+  color: $textColor;
   a {
-    color: $lightblue;
+    color: $linkText;
   }
 }
 
@@ -16,15 +19,23 @@ header#page {
   margin-bottom: 10px;
   overflow: hidden;
   padding: 10px, 20px;
-  background-color: $orange;
-  color: black;
+  background-color: $header;
+  color: $headerText;
 
   h1 {
     padding: 0px;
     margin: 0px;
     font-size: 3em;
     position: absolute;
-    top: 24px;
+    top: 23px;
+
+    a {
+      color: $headerText;
+    }
+  }
+
+  a {
+    color: lightblue;
   }
 
   nav#utility {
@@ -39,8 +50,8 @@ header#page {
 }
 
 footer#page {
-  background-color: $orange;
-  color: black;
+  background-color: $header;
+  color: $footerText;
 
   ul {
     margin-left: -10px;
@@ -53,9 +64,9 @@ footer#page {
 
     a{
       padding: 5px 10px; 
-      color: black;
+      color: $footerText;
       &:link, &:hover, &:visited, &.active {
-        color: black;
+        color: $footerText;
       }
     }
   }
