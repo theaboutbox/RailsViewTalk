@@ -8,7 +8,7 @@ module EventSteps
   end
 
   step "I select event :event_name" do |event_name|
-    select event_name, from: 'user_event_id'
+    choose event_name
     click_button 'Update User'
   end
 

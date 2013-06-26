@@ -9,7 +9,7 @@ module NonProfitSteps
   end
 
   step "I select non profit :non_profit_name" do |non_profit_name|
-    select non_profit_name, from: 'user_non_profit_id'
+    choose non_profit_name
     click_button "Update User"
   end
 
