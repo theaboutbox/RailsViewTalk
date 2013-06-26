@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130625152115) do
+ActiveRecord::Schema.define(version: 20130626031245) do
 
   create_table "addresses", force: true do |t|
     t.string   "street"
@@ -25,14 +25,12 @@ ActiveRecord::Schema.define(version: 20130625152115) do
   end
 
   create_table "events", force: true do |t|
-    t.string  "name",             null: false
-    t.date    "date"
-    t.string  "url",              null: false
-    t.integer "event_address_id"
-    t.string  "sport"
-    t.text    "notes"
-    t.string  "slug"
-    t.text    "description"
+    t.string "name",        null: false
+    t.date   "date"
+    t.string "url",         null: false
+    t.string "sport"
+    t.string "slug"
+    t.text   "description"
   end
 
   create_table "non_profits", force: true do |t|
@@ -41,7 +39,6 @@ ActiveRecord::Schema.define(version: 20130625152115) do
     t.string "url",         null: false
     t.string "slug"
     t.text   "description"
-    t.text   "notes"
   end
 
   create_table "rails_admin_histories", force: true do |t|

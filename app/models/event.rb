@@ -1,5 +1,4 @@
 class Event < ActiveRecord::Base
-  belongs_to :address, class_name: 'Addresss', dependent: :destroy
 end
 
 # == Schema Information

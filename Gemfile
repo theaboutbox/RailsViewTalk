@@ -14,6 +14,7 @@ gem 'haml'
 gem 'friendly_id', github: 'FriendlyId/friendly_id'
 gem 'rails_admin', github: 'sferik/rails_admin', branch: 'rails-4'
 gem 'simple_form', github: 'plataformatec/simple_form'
+gem 'state_machine'
 
 group :doc do
   gem 'sdoc', require: false
