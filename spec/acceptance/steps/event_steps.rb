@@ -9,7 +9,6 @@ module EventSteps
 
   step "I select event :event_name" do |event_name|
     choose event_name
-    click_button 'Update User'
   end
 
   step "my event should be :event_name" do |event_name|

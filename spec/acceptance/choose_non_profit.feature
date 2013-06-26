@@ -4,4 +4,5 @@ Feature: Selecting a non profit
     And I am logged in
     When I go to choose a non profit
     And I select non profit "Super Non Profit"
+    And I update the user
     Then my non profit should be "Super Non Profit"

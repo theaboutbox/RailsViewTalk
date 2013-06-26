@@ -10,7 +10,30 @@ module UserSteps
     fill_in 'user[email]', with: 'test@test.com'
     fill_in 'user[password]', with: 'test12345'
     fill_in 'user[password_confirmation]', with: 'test12345'
+  end
+
+  def fill_in_address(name)
+    fill_in "user_#{name}_address_attributes_street", with: '12345 Test Street'
+    fill_in "user_#{name}_address_attributes_city", with: "Testville"
+    fill_in "user_#{name}_address_attributes_region", with: "CO"
+    fill_in "user_#{name}_address_attributes_post_code", with: "12345"
+    select "United States", from: "user_#{name}_address_attributes_country"
+  end
+
+  step "I fill out my home address" do
+    fill_in_address "home"
+  end
+
+  step "I fill out my work address" do
+    fill_in_address "work"
+  end
+
+  step "I submit the user registration form" do
     click_button 'Sign up'
+  end
+
+  step "I update the user" do
+    click_button 'Update User'
   end
 
   step "it should create a new user" do
@@ -26,14 +49,14 @@ module UserSteps
   end
 
   step "I am logged in" do
-    @user = Fabricate(:user)
+    @user = Fabricate(:user_with_profile)
     sign_in_as @user
   end
 
   step "I am a user competing in the :event_name raising money for :non_profit_name" do |event_name, non_profit_name|
     @event = Fabricate(:event, name: event_name, description: "Event Description")
     @non_profit = Fabricate(:non_profit, name: non_profit_name, description: "Non Profit Description")
-    @user = Fabricate(:user, non_profit: @non_profit, event: @event)
+    @user = Fabricate(:user_with_profile, non_profit: @non_profit, event: @event)
     sign_in_as @user
   end
 

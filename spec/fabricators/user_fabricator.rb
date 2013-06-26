@@ -15,5 +15,4 @@ end
 Fabricator(:user_with_profile, from: :user_with_addresses) do
   event(fabricator: :event)
   non_profit(fabricator: :non_profit)
-  accepted_terms { true }
 end

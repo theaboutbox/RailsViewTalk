@@ -10,7 +10,6 @@ module NonProfitSteps
 
   step "I select non profit :non_profit_name" do |non_profit_name|
     choose non_profit_name
-    click_button "Update User"
   end
 
   step "my non profit should be :non_profit_name" do |non_profit_name|

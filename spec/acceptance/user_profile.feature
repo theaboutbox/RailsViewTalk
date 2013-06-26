@@ -6,8 +6,3 @@ Feature: User Fundraising Page
     And I should see my event info
     And I should see my non profit info
     And I should be able to donate
-
-  Scenario:
-    Given I am logged in
-    When I go to my fundraising page
-    Then I should see that my profile is not complete

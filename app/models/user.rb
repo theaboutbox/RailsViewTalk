@@ -9,6 +9,11 @@ class User < ActiveRecord::Base
   belongs_to :event
   belongs_to :non_profit
 
+  validates_presence_of :first_name, :last_name, :email
+  validates_presence_of :home_address, :work_address
+  validates_presence_of :event, :non_profit
+  accepts_nested_attributes_for :home_address
+  accepts_nested_attributes_for :work_address
   # [Public] The full, displayable name for a user.
   #
   # Example, if the first_name is "Testy" and the last name is "Tester"

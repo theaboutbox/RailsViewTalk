@@ -1,4 +1,5 @@
 class Address < ActiveRecord::Base
+  validates_presence_of :street, :city, :region, :post_code, :country
 end
 
 # == Schema Information

@@ -4,6 +4,23 @@ span.radio {
   padding-bottom: 0.5em;
 }
 
+fieldset {
+  width: 42em;
+  margin-bottom: 2em;
+}
+
+.input {
+  margin-bottom: 0.5em;
+}
+
+label.string, label.password {
+  display: block;
+}
+
+input.string, input.password {
+  width: 40em;
+}
+
 label.radio_buttons {
   display: block;
   padding-bottom: 1em;
@@ -11,4 +28,10 @@ label.radio_buttons {
 
 input.radio_buttons {
   margin-right: 0.5em;
+}
+
+.error {
+  color: red;
+  font-size: 0.8em;
+  display: block;
 }
