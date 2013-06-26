@@ -5,13 +5,12 @@ end
 #
 # Table name: events
 #
-#  id               :integer          not null, primary key
-#  name             :string(255)      not null
-#  date             :date
-#  url              :string(255)      not null
-#  event_address_id :integer
-#  sport            :string(255)
-#  notes            :text
-#  slug             :string(255)
+#  id          :integer          not null, primary key
+#  name        :string(255)      not null
+#  date        :date
+#  url         :string(255)      not null
+#  sport       :string(255)
+#  slug        :string(255)
+#  description :text
 #
 

@@ -11,6 +11,5 @@ end
 #  url         :string(255)      not null
 #  slug        :string(255)
 #  description :text
-#  notes       :text
 #
 

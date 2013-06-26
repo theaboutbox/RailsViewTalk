@@ -1,7 +1,22 @@
 require 'spec_helper'
 
 describe User do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it "Fabricates a valid user" do
+    expect(Fabricate(:user_with_profile)).to be_valid
+  end
+
+  it "Transitions States" do
+    user = Fabricate(:user_with_profile)
+    expect(user.registration_state_name).to eq :initial
+    user.next_state
+    expect(user.registration_state_name).to eq :address
+    user.next_state
+    expect(user.registration_state_name).to eq :non_profit
+    user.next_state
+    expect(user.registration_state_name).to eq :event
+    user.next_state
+    expect(user.registration_state_name).to eq :registered
+  end
 end
 
 # == Schema Information
@@ -34,5 +49,12 @@ end
 #  slug                   :string(255)      not null
 #  accepted_terms_at      :datetime
 #  admin                  :boolean
+#  registration_state     :string(255)      default("initial"), not null
+#
+# Indexes
+#
+#  index_users_on_email                 (email) UNIQUE
+#  index_users_on_reset_password_token  (reset_password_token) UNIQUE
+#  index_users_on_slug                  (slug) UNIQUE
 #
 

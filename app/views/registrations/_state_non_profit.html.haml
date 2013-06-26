@@ -1,0 +1,6 @@
+%fieldset
+  %legend Non Profit
+  = f.association :non_profit, collection: NonProfit.all,
+    label: "Select a non profit", as: :radio_buttons
+
+

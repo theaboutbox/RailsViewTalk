@@ -4,6 +4,10 @@ module UserSteps
     click_link "[Register]"
   end
 
+  step "I go to the next step" do
+    click_button "Next >"
+  end
+
   step "I fill out my profile information" do
     fill_in 'user[first_name]', with: 'Test'
     fill_in 'user[last_name]', with: 'User'

@@ -9,11 +9,10 @@ class User < ActiveRecord::Base
   belongs_to :event
   belongs_to :non_profit
 
+  accepts_nested_attributes_for :home_address, :work_address
+
   validates_presence_of :first_name, :last_name, :email
-  validates_presence_of :home_address, :work_address
-  validates_presence_of :event, :non_profit
-  accepts_nested_attributes_for :home_address
-  accepts_nested_attributes_for :work_address
+
   # [Public] The full, displayable name for a user.
   #
   # Example, if the first_name is "Testy" and the last name is "Tester"
@@ -22,6 +21,35 @@ class User < ActiveRecord::Base
   # Returns String display name for this user 
   def display_name
     "#{first_name} #{last_name}"
+  end
+
+  state_machine :registration_state, :initial => :initial do
+    event :next_state do
+      transition :initial => :address
+      transition :address => :non_profit
+      transition :non_profit => :event
+      transition :event => :registered
+    end
+
+    state :non_profit, :event, :registered do
+      validates_presence_of :home_address, :work_address
+    end
+
+    state :event, :registered do
+      validates_presence_of :non_profit
+    end
+
+    state :registered do
+      validates_presence_of :event
+    end
+  end
+
+  def last_step?
+    registration_state_name == :event
+  end
+
+  def complete?
+    registration_state_name == :registered
   end
 
 end
@@ -56,5 +84,12 @@ end
 #  slug                   :string(255)      not null
 #  accepted_terms_at      :datetime
 #  admin                  :boolean
+#  registration_state     :string(255)      default("initial"), not null
+#
+# Indexes
+#
+#  index_users_on_email                 (email) UNIQUE
+#  index_users_on_reset_password_token  (reset_password_token) UNIQUE
+#  index_users_on_slug                  (slug) UNIQUE
 #
 

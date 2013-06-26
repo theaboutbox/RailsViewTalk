@@ -1,0 +1,12 @@
+%fieldset
+  %legend Home Address
+  - @user.build_home_address if @user.home_address.nil?
+  = render :partial => 'registrations/form_address', 
+    locals: {field_name: :home_address, form: f}
+
+%fieldset
+  %legend Work Address
+  - @user.build_work_address if @user.work_address.nil?
+  = render :partial => 'registrations/form_address', 
+    locals: {field_name: :work_address, form: f}
+

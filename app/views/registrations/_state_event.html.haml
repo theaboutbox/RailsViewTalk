@@ -1,0 +1,4 @@
+%fieldset
+  %legend Event
+  = f.association :event, collection: Event.all,
+    label: "Select an event", as: :radio_buttons

@@ -1,0 +1,12 @@
+- if @user.complete?
+  %h2 Edit #{resource_name.to_s.humanize}
+  = render partial: "registrations/state_registered"
+- else
+  = simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
+    = devise_error_messages!
+    = render partial: "registrations/state_#{@user.registration_state}", locals: {f: f}
+    - if @user.last_step?
+      = f.submit 'Sign up'
+    - else
+      = f.submit 'Next >'
+  = render "devise/shared/links"
