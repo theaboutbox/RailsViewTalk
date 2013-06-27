@@ -1,28 +1,13 @@
-== README
+== Rails View Talk
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is an example for an app that allows users to sign up, pick a nonprofit and an
+event and have a fundraising page.
 
-Things you may want to cover:
+We go through a few steps (implemented via git tags)
 
-* Ruby version
+step_1 - simple registration, prompt users to choose event, nonprofit
+step_2 - Use radio buttons instead of select boxes
+step_3 - One mondo registration form
+step_4 - Multi-step form impelmented via state machine
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+To add events/nonprofits, etc, to to /admin - this uses rails_admin
